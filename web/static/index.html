@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>perf-eval-gen — 운영자 콘솔</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fid.css">
+  <script src="/config.js"></script>
+  <script src="progress.js" defer></script>
+  <script src="view-switch.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="fid.js" defer></script>
+  <script src="fidv2.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <h1 class="masthead-title">perf-eval-gen</h1>
+      <p class="masthead-sub">자체 성능평가 3지표 실측 · 운영자 콘솔</p>
+    </header>
+
+    <nav id="metric-view-switch" class="metric-view-switch" aria-label="측정 지표 선택">
+      <button class="metric-view-option" type="button" data-metric-view="pair" aria-selected="true">PSNR · SSIM</button>
+      <button class="metric-view-option" type="button" data-metric-view="fid" aria-selected="false">FID</button>
+      <button class="metric-view-option" type="button" data-metric-view="fidv2" aria-selected="false">FID_v2</button>
+    </nav>
+
+    <div id="view-pair" class="metric-view" data-metric-panel="pair">
+    <section id="dataset-tree" class="panel panel-locked">
+      <div class="panel-head">
+        <h2 class="panel-title">입력 데이터</h2>
+        <span id="selection-count" class="meta-inline" aria-live="polite">선택 0 / 최대 —장</span>
+        <div class="selection-tools" aria-label="시험 대상 선택 보조">
+          <button class="btn-selection" id="selection-fill" type="button" disabled>모두 선택</button>
+          <button class="btn-selection" id="selection-reset" type="button" disabled>선택 초기화</button>
+        </div>
+      </div>
+      <div class="quota-row">
+        <div id="quota-strip" class="quota-strip" aria-label="그룹별 이미지 수"></div>
+        <button class="btn-try" id="try-button" type="button" disabled>생성</button>
+      </div>
+      <span id="run-alert" class="inline-alert" role="alert" hidden></span>
+      <div id="tree-groups" class="tree" aria-live="polite"></div>
+      <div id="try-progress" class="execution-progress" aria-live="polite" hidden>
+        <div class="execution-progress-head">
+          <span id="try-progress-stage">준비 중</span>
+          <span class="execution-progress-numbers">
+            <span id="try-progress-count">0/—</span>
+            <output id="try-progress-percent">0%</output>
+          </span>
+        </div>
+        <div id="try-progress-track" class="execution-progress-track" role="progressbar"
+             aria-label="PSNR·SSIM 측정 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span id="try-progress-fill" class="execution-progress-fill"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="try-result" class="panel" hidden>
+      <div class="panel-head">
+        <h2 class="panel-title">시험 결과</h2>
+      </div>
+      <p id="result-empty" class="empty-note" hidden>데이터를 선택해 실행하면 결과가 표시된다.</p>
+      <div class="metric-grid">
+        <article id="metric-psnr" class="metric">
+          <header class="metric-head">
+            <h3 class="metric-name">PSNR</h3>
+            <span id="psnr-badge" class="badge" hidden>—</span>
+          </header>
+          <p id="psnr-value" class="metric-value">—</p>
+          <p id="psnr-target" class="metric-target">목표 — · 높을수록 좋음</p>
+          <div id="psnr-tolerance" class="tolerance" data-dir="ge" hidden>
+            <div class="tolerance-zone"></div>
+            <div class="tolerance-tick"></div>
+            <div class="tolerance-marker"></div>
+          </div>
+          <div class="tolerance-scale"><span>15</span><span>25</span><span>35</span></div>
+          <p id="psnr-foot" class="metric-foot">—</p>
+        </article>
+
+        <article id="metric-ssim" class="metric">
+          <header class="metric-head">
+            <h3 class="metric-name">SSIM</h3>
+            <span id="ssim-badge" class="badge" hidden>—</span>
+          </header>
+          <p id="ssim-value" class="metric-value">—</p>
+          <p id="ssim-target" class="metric-target">목표 — · 높을수록 좋음</p>
+          <div id="ssim-tolerance" class="tolerance" data-dir="ge" hidden>
+            <div class="tolerance-zone"></div>
+            <div class="tolerance-tick"></div>
+            <div class="tolerance-marker"></div>
+          </div>
+          <div class="tolerance-scale tolerance-scale-ssim"><span>0.70</span><span>0.90</span><span>1.00</span></div>
+          <p id="ssim-foot" class="metric-foot">—</p>
+        </article>
+      </div>
+
+      <div class="dist-grid">
+        <figure class="dist">
+          <figcaption class="dist-caption">
+            PSNR 분포 <span id="psnr-dist-n" class="dist-n">n=—</span>
+          </figcaption>
+          <div id="psnr-histogram" class="dist-plot" data-slot="psnr-histogram">
+            <div class="dist-tick"></div>
+            <div class="dist-bars"></div>
+          </div>
+          <p id="psnr-dist-foot" class="dist-foot">장별 값 없음</p>
+        </figure>
+
+        <figure class="dist">
+          <figcaption class="dist-caption">
+            SSIM 분포 <span id="ssim-dist-n" class="dist-n">n=—</span>
+          </figcaption>
+          <div id="ssim-histogram" class="dist-plot" data-slot="ssim-histogram">
+            <div class="dist-tick"></div>
+            <div class="dist-bars"></div>
+          </div>
+          <p id="ssim-dist-foot" class="dist-foot">장별 값 없음</p>
+        </figure>
+      </div>
+      <div id="try-result-list"></div>
+      <nav id="try-pagination" class="try-pagination" aria-label="장별 시험 결과 페이지" hidden>
+        <button class="btn-selection" id="try-page-prev" type="button">이전 10개</button>
+        <output id="try-page-status" class="try-page-status" aria-live="polite">—</output>
+        <button class="btn-selection" id="try-page-next" type="button">다음 10개</button>
+      </nav>
+    </section>
+
+    </div>
+
+    <div id="view-fid" class="metric-view" hidden data-metric-panel="fid">
+      <section class="panel panel-locked" aria-labelledby="fid-dataset-title">
+        <div class="panel-head">
+          <h2 id="fid-dataset-title" class="panel-title">입력 데이터</h2>
+          <span id="fid-selection-count" class="meta-inline" aria-live="polite">선택 0 / 최대 500장</span>
+          <div class="selection-tools" aria-label="FID 측정 대상 선택 보조">
+            <button class="btn-selection" id="fid-selection-fill" type="button" disabled>모두 선택</button>
+            <button class="btn-selection" id="fid-selection-reset" type="button" disabled>선택 초기화</button>
+          </div>
+        </div>
+        <div class="fid-subsection">
+          <p class="tree-legend">
+            <b>2~500장을 선택해 측정한다.</b>
+            <span class="legend-sep">·</span>
+            FID는 장별 FID 평균이 아닌 선택 집합의 단일 FID다.
+          </p>
+          <div id="fid-tree-groups" class="tree" aria-live="polite"></div>
+        </div>
+        <div class="fid-run-row">
+          <button id="fid-run-button" class="btn-try" type="button" disabled>측정</button>
+        </div>
+        <p id="fid-run-alert" class="inline-alert" role="alert" hidden></p>
+        <div id="fid-progress" class="execution-progress fid-progress" aria-live="polite" hidden>
+          <div class="execution-progress-head">
+            <span id="fid-progress-stage">상태 확인 중</span>
+            <span class="execution-progress-numbers">
+              <span id="fid-progress-count">0/—</span>
+              <output id="fid-progress-percent">0%</output>
+            </span>
+          </div>
+          <div id="fid-progress-track" class="execution-progress-track" role="progressbar"
+               aria-label="FID 측정 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="fid-progress-fill" class="execution-progress-fill"></span>
+          </div>
+          <pre id="fid-log-tail" class="fid-log-tail">로그 대기 중</pre>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="fid-result-title">
+        <div class="panel-head">
+          <h2 id="fid-result-title" class="panel-title">FID 결과</h2>
+        </div>
+        <p id="fid-result-empty" class="empty-note">이미지를 선택해 실행하면 결과가 표시된다.</p>
+        <div id="fid-result-body" hidden>
+          <div class="metric-grid fid-metric-grid">
+            <article id="fid-metric" class="metric">
+              <header class="metric-head">
+                <h3 class="metric-name">FID</h3>
+                <span id="fid-badge" class="badge" hidden>—</span>
+              </header>
+              <p id="fid-value" class="metric-value">—</p>
+              <p id="fid-target" class="metric-target">목표 확인 중</p>
+              <div id="fid-tolerance" class="tolerance" data-dir="le" hidden>
+                <div class="tolerance-zone"></div>
+                <div class="tolerance-tick"></div>
+                <div class="tolerance-marker"></div>
+              </div>
+              <div id="fid-scale" class="fid-tolerance-scale" hidden>
+                <span id="fid-scale-low"></span>
+                <span id="fid-scale-target" class="fid-scale-target"></span>
+                <span id="fid-scale-high"></span>
+              </div>
+              <p id="fid-metric-foot" class="metric-foot">선택 집합의 단일 거리 · 장별 평균 아님</p>
+            </article>
+          </div>
+
+          <dl class="spec-grid fid-result-grid">
+            <dt>model</dt><dd id="fid-result-model">—</dd>
+            <dt>strength</dt><dd id="fid-result-strength">—</dd>
+            <dt>n</dt><dd id="fid-result-count">—</dd>
+            <dt>clean-fid</dt><dd><pre id="fid-result-clean-fid" class="fid-json">—</pre></dd>
+            <dt>seed</dt><dd id="fid-result-seed">—</dd>
+            <dt>determinism</dt><dd><pre id="fid-result-determinism" class="fid-json">—</pre></dd>
+            <dt>측정 시각</dt><dd id="fid-result-created-at">—</dd>
+            <dt>manifest_sha256</dt><dd id="fid-result-manifest">—</dd>
+            <dt>출처 표기</dt><dd id="fid-result-attribution">—</dd>
+          </dl>
+
+          <section id="fid-images" class="fid-images" aria-labelledby="fid-images-title" hidden>
+            <div class="fid-images-head">
+              <h3 id="fid-images-title" class="fid-subtitle">원본 x ↔ 생성물 y · 전체 결과</h3>
+              <output id="fid-image-page-status" class="fid-image-page-status" aria-live="polite">—</output>
+            </div>
+            <div id="fid-image-list" class="fid-image-list"></div>
+            <nav class="fid-number-pagination" aria-label="FID 결과 이미지 페이지">
+              <div id="fid-page-buttons" class="fid-page-buttons"></div>
+            </nav>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <div id="view-fidv2" class="metric-view" hidden data-metric-panel="fidv2">
+      <section class="panel panel-locked" aria-labelledby="fidv2-dataset-title">
+        <div class="panel-head">
+          <h2 id="fidv2-dataset-title" class="panel-title">입력 데이터</h2>
+          <span id="fidv2-selection-count" class="meta-inline" aria-live="polite">선택 0 / 최대 500장</span>
+          <div class="selection-tools" aria-label="FID_v2 측정 대상 선택 보조">
+            <button class="btn-selection" id="fidv2-selection-fill" type="button" disabled>모두 선택</button>
+            <button class="btn-selection" id="fidv2-selection-reset" type="button" disabled>선택 초기화</button>
+          </div>
+        </div>
+        <div class="fid-subsection">
+          <p class="tree-legend">
+            <b>2~500장을 선택해 측정한다.</b>
+            <span class="legend-sep">·</span>
+            입력은 규칙 기반 합성 썸네일이며 AI 생성물이 아니다.
+            <span class="legend-sep">·</span>
+            FID는 선택 집합의 단일 거리다.
+          </p>
+          <p id="fidv2-estimate" class="control-note">
+            FLUX img2img 예상 소요시간은 장당 약 22초 · 500장 선택 시 약 3시간
+          </p>
+          <div id="fidv2-tree-groups" class="tree" aria-live="polite"></div>
+        </div>
+        <div class="fid-run-row">
+          <button id="fidv2-run-button" class="btn-try" type="button" disabled>측정</button>
+        </div>
+        <p id="fidv2-run-alert" class="inline-alert" role="alert" hidden></p>
+        <div id="fidv2-progress" class="execution-progress fid-progress" aria-live="polite" hidden>
+          <div class="execution-progress-head">
+            <span id="fidv2-progress-stage">상태 확인 중</span>
+            <span class="execution-progress-numbers">
+              <span id="fidv2-progress-count">0/—</span>
+              <output id="fidv2-progress-percent">0%</output>
+            </span>
+          </div>
+          <div id="fidv2-progress-track" class="execution-progress-track" role="progressbar"
+               aria-label="FID_v2 측정 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="fidv2-progress-fill" class="execution-progress-fill"></span>
+          </div>
+          <pre id="fidv2-log-tail" class="fid-log-tail">로그 대기 중</pre>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="fidv2-result-title">
+        <div class="panel-head">
+          <h2 id="fidv2-result-title" class="panel-title">FID_v2 결과</h2>
+        </div>
+        <p id="fidv2-result-empty" class="empty-note">이미지를 선택해 실행하면 결과가 표시된다.</p>
+        <div id="fidv2-result-body" hidden>
+          <div class="metric-grid fid-metric-grid">
+            <article id="fidv2-metric" class="metric">
+              <header class="metric-head">
+                <h3 class="metric-name">FID</h3>
+                <span id="fidv2-badge" class="badge" hidden>—</span>
+              </header>
+              <p id="fidv2-value" class="metric-value">—</p>
+              <p id="fidv2-target" class="metric-target">목표 확인 중</p>
+              <div id="fidv2-tolerance" class="tolerance" data-dir="le" hidden>
+                <div class="tolerance-zone"></div>
+                <div class="tolerance-tick"></div>
+                <div class="tolerance-marker"></div>
+              </div>
+              <div id="fidv2-scale" class="fid-tolerance-scale" hidden>
+                <span id="fidv2-scale-low"></span>
+                <span id="fidv2-scale-target" class="fid-scale-target"></span>
+                <span id="fidv2-scale-high"></span>
+              </div>
+              <p id="fidv2-metric-foot" class="metric-foot">선택 집합의 단일 거리 · 장별 평균 아님</p>
+            </article>
+          </div>
+
+          <dl class="spec-grid fid-result-grid">
+            <dt>model</dt><dd id="fidv2-result-model">—</dd>
+            <dt>generation_mode</dt><dd id="fidv2-result-generation-mode">—</dd>
+            <dt>strength</dt><dd id="fidv2-result-strength">—</dd>
+            <dt>n</dt><dd id="fidv2-result-count">—</dd>
+            <dt>clean-fid</dt><dd><pre id="fidv2-result-clean-fid" class="fid-json">—</pre></dd>
+            <dt>seed</dt><dd id="fidv2-result-seed">—</dd>
+            <dt>determinism</dt><dd><pre id="fidv2-result-determinism" class="fid-json">—</pre></dd>
+            <dt>측정 시각</dt><dd id="fidv2-result-created-at">—</dd>
+            <dt>manifest_sha256</dt><dd id="fidv2-result-manifest">—</dd>
+            <dt>출처 표기</dt><dd id="fidv2-result-attribution">—</dd>
+          </dl>
+
+          <section id="fidv2-images" class="fid-images" aria-labelledby="fidv2-images-title" hidden>
+            <div class="fid-images-head">
+              <h3 id="fidv2-images-title" class="fid-subtitle">원본 x ↔ 생성물 y · 전체 결과</h3>
+              <output id="fidv2-image-page-status" class="fid-image-page-status" aria-live="polite">—</output>
+            </div>
+            <div id="fidv2-image-list" class="fid-image-list"></div>
+            <nav class="fid-number-pagination" aria-label="FID_v2 결과 이미지 페이지">
+              <div id="fidv2-page-buttons" class="fid-page-buttons"></div>
+            </nav>
+          </section>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

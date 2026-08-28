@@ -1,0 +1,24 @@
+.env
+.venv/
+/huggingface/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+plan.md
+specs/
+DESIGN.md
+.source/
+.sources/
+
+report/out/
+runs/
+*.log
+.gstack/
+.dev.pids
+.dev-logs/
+.claude/
+
+# --- 대시보드에서 제외 (harness) ---
+/연구개발계획서_시장대응형_디노스튜디오_협약용.pdf
+/dataset/

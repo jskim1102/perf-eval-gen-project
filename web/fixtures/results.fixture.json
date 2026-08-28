@@ -1,0 +1,846 @@
+{
+  "run_id": "fixture",
+  "created_at": "2026-08-04T12:00:00+09:00",
+  "protocol": {
+    "seed": 0,
+    "n_input": 500,
+    "n_pairs": 100,
+    "strength": 0.25,
+    "model": "fixture",
+    "steps": 30,
+    "guidance": 5.0,
+    "scheduler": "EulerDiscreteScheduler",
+    "output": "1024x1024 PNG",
+    "fid": {},
+    "psnr": {},
+    "ssim": {}
+  },
+  "env": {},
+  "inputs": {
+    "input_manifest_sha256": "7e9949c75e2eb89cdd557a5b8d288b48a5d62bd60d5d775d3dad9eee6de400a6",
+    "generated_manifest_sha256": "fixture"
+  },
+  "metrics": {
+    "fid": 8.75,
+    "psnr": {
+      "mean": 25.48,
+      "std": 0.8982204629154248,
+      "per_image": [
+        24.0,
+        24.7,
+        25.4,
+        26.1,
+        26.8,
+        24.4,
+        25.1,
+        25.8,
+        26.5,
+        24.1,
+        24.8,
+        25.5,
+        26.2,
+        26.9,
+        24.5,
+        25.2,
+        25.9,
+        26.6,
+        24.2,
+        24.9,
+        25.6,
+        26.3,
+        27.0,
+        24.6,
+        25.3,
+        26.0,
+        26.7,
+        24.3,
+        25.0,
+        25.7,
+        26.4,
+        24.0,
+        24.7,
+        25.4,
+        26.1,
+        26.8,
+        24.4,
+        25.1,
+        25.8,
+        26.5,
+        24.1,
+        24.8,
+        25.5,
+        26.2,
+        26.9,
+        24.5,
+        25.2,
+        25.9,
+        26.6,
+        24.2,
+        24.9,
+        25.6,
+        26.3,
+        27.0,
+        24.6,
+        25.3,
+        26.0,
+        26.7,
+        24.3,
+        25.0,
+        25.7,
+        26.4,
+        24.0,
+        24.7,
+        25.4,
+        26.1,
+        26.8,
+        24.4,
+        25.1,
+        25.8,
+        26.5,
+        24.1,
+        24.8,
+        25.5,
+        26.2,
+        26.9,
+        24.5,
+        25.2,
+        25.9,
+        26.6,
+        24.2,
+        24.9,
+        25.6,
+        26.3,
+        27.0,
+        24.6,
+        25.3,
+        26.0,
+        26.7,
+        24.3,
+        25.0,
+        25.7,
+        26.4,
+        24.0,
+        24.7,
+        25.4,
+        26.1,
+        26.8,
+        24.4,
+        25.1
+      ]
+    },
+    "ssim": {
+      "mean": 0.8797,
+      "std": 0.011847784603038673,
+      "per_image": [
+        0.86,
+        0.871,
+        0.882,
+        0.893,
+        0.863,
+        0.874,
+        0.885,
+        0.896,
+        0.866,
+        0.877,
+        0.888,
+        0.899,
+        0.869,
+        0.88,
+        0.891,
+        0.861,
+        0.872,
+        0.883,
+        0.894,
+        0.864,
+        0.875,
+        0.886,
+        0.897,
+        0.867,
+        0.878,
+        0.889,
+        0.9,
+        0.87,
+        0.881,
+        0.892,
+        0.862,
+        0.873,
+        0.884,
+        0.895,
+        0.865,
+        0.876,
+        0.887,
+        0.898,
+        0.868,
+        0.879,
+        0.89,
+        0.86,
+        0.871,
+        0.882,
+        0.893,
+        0.863,
+        0.874,
+        0.885,
+        0.896,
+        0.866,
+        0.877,
+        0.888,
+        0.899,
+        0.869,
+        0.88,
+        0.891,
+        0.861,
+        0.872,
+        0.883,
+        0.894,
+        0.864,
+        0.875,
+        0.886,
+        0.897,
+        0.867,
+        0.878,
+        0.889,
+        0.9,
+        0.87,
+        0.881,
+        0.892,
+        0.862,
+        0.873,
+        0.884,
+        0.895,
+        0.865,
+        0.876,
+        0.887,
+        0.898,
+        0.868,
+        0.879,
+        0.89,
+        0.86,
+        0.871,
+        0.882,
+        0.893,
+        0.863,
+        0.874,
+        0.885,
+        0.896,
+        0.866,
+        0.877,
+        0.888,
+        0.899,
+        0.869,
+        0.88,
+        0.891,
+        0.861,
+        0.872,
+        0.883
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "item_id": "B07JK8GF1X",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__51fckxcZGzL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__51fckxcZGzL.jpg"
+    },
+    {
+      "item_id": "B07JKSJNJH",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__51nOgfdC0IL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__51nOgfdC0IL.jpg"
+    },
+    {
+      "item_id": "B07JKTR8NC",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__610AN9GvpwL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__610AN9GvpwL.jpg"
+    },
+    {
+      "item_id": "B07K7NXX2K",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__519n-xMJAXL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__519n-xMJAXL.jpg"
+    },
+    {
+      "item_id": "B07K84GT56",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__518iBqNkzkL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__518iBqNkzkL.jpg"
+    },
+    {
+      "item_id": "B07RB7YK3G",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__91tNPcvqUyL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__91tNPcvqUyL.jpg"
+    },
+    {
+      "item_id": "B07RT5JN33",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/TABLE__61wEjioBB2L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/TABLE__61wEjioBB2L.jpg"
+    },
+    {
+      "item_id": "B07SH7GF42",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__713i0vAX1QL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__713i0vAX1QL.jpg"
+    },
+    {
+      "item_id": "B07SMJYG4X",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__713N6BfwwvL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__713N6BfwwvL.jpg"
+    },
+    {
+      "item_id": "B07SMJZKQ3",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/TABLE__71-+wq526OL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/TABLE__71-+wq526OL.jpg"
+    },
+    {
+      "item_id": "B082VFZD5K",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__71TAP0hFezL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__71TAP0hFezL.jpg"
+    },
+    {
+      "item_id": "B0856GFH76",
+      "group": "가구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__51GuiZTc-jL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/가구/CHAIR__51GuiZTc-jL.jpg"
+    },
+    {
+      "item_id": "B07D2RNDH2",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__61pgW2Sov9L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__61pgW2Sov9L.jpg"
+    },
+    {
+      "item_id": "B07GDWV4N6",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__6193mM3DVOL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__6193mM3DVOL.jpg"
+    },
+    {
+      "item_id": "B07GDWZDV4",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__619U+Y9TE2L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__619U+Y9TE2L.jpg"
+    },
+    {
+      "item_id": "B07GF586MQ",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__61IinS6JO1L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__61IinS6JO1L.jpg"
+    },
+    {
+      "item_id": "B07J4V9XPZ",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__71jStxGWFIL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__71jStxGWFIL.jpg"
+    },
+    {
+      "item_id": "B07M6Q752Y",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__817+N-0LqUL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__817+N-0LqUL.jpg"
+    },
+    {
+      "item_id": "B07P7H5PL5",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__51hjLqeHfCL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__51hjLqeHfCL.jpg"
+    },
+    {
+      "item_id": "B07RQWW95Y",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__61NybGn0eKL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__61NybGn0eKL.jpg"
+    },
+    {
+      "item_id": "B07S3B153K",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__71QBBamXamL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__71QBBamXamL.jpg"
+    },
+    {
+      "item_id": "B07SFYJ138",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__81pi4Qii85L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__81pi4Qii85L.jpg"
+    },
+    {
+      "item_id": "B07TDSDMGM",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__61NyAxwMWeL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__61NyAxwMWeL.jpg"
+    },
+    {
+      "item_id": "B07TDTH44Q",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__71JHE8Oz+0L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__71JHE8Oz+0L.jpg"
+    },
+    {
+      "item_id": "B07TDTHJSR",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__91VD7YNBp7L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__91VD7YNBp7L.jpg"
+    },
+    {
+      "item_id": "B07TFX18CS",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__911uITRFeKL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__911uITRFeKL.jpg"
+    },
+    {
+      "item_id": "B07VVBRTRS",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__81bJwQImhdL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__81bJwQImhdL.jpg"
+    },
+    {
+      "item_id": "B07VZRPMZC",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__71Vg681a+ZL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__71Vg681a+ZL.jpg"
+    },
+    {
+      "item_id": "B07ZDFL54F",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__81Kb3MLm+uL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/SAFETY_SUPPLY__81Kb3MLm+uL.jpg"
+    },
+    {
+      "item_id": "B08566F54J",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__61h8vDgZxvL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__61h8vDgZxvL.jpg"
+    },
+    {
+      "item_id": "B086QBQBW8",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__51245oboBZL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/OFFICE_PRODUCTS__51245oboBZL.jpg"
+    },
+    {
+      "item_id": "B088XZRWRV",
+      "group": "사무공구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__81mWL75yk8L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/사무공구/HARDWARE_HANDLE__81mWL75yk8L.jpg"
+    },
+    {
+      "item_id": "B0744WBM67",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME_FURNITURE_AND_DECOR__71fW5-BxXeL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME_FURNITURE_AND_DECOR__71fW5-BxXeL.jpg"
+    },
+    {
+      "item_id": "B07588G261",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__51lim3NyYlL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__51lim3NyYlL.jpg"
+    },
+    {
+      "item_id": "B079LMZPMG",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71Sjx-ZTKIL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71Sjx-ZTKIL.jpg"
+    },
+    {
+      "item_id": "B07L1KCQTV",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61yWniaYuRL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61yWniaYuRL.jpg"
+    },
+    {
+      "item_id": "B07QD6ZWTP",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71YdZg7wT+L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71YdZg7wT+L.jpg"
+    },
+    {
+      "item_id": "B07RDPN5FL",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__81bEg5OR1JL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__81bEg5OR1JL.jpg"
+    },
+    {
+      "item_id": "B07RDPN933",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71p6XUYFY5L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71p6XUYFY5L.jpg"
+    },
+    {
+      "item_id": "B07RFQY12X",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71vBNugTDhL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71vBNugTDhL.jpg"
+    },
+    {
+      "item_id": "B07RFQYBVM",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__81hWQQCSoIL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__81hWQQCSoIL.jpg"
+    },
+    {
+      "item_id": "B07TNQDMJM",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61+X+6sOYlL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61+X+6sOYlL.jpg"
+    },
+    {
+      "item_id": "B07V126F2D",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__81nUwuCkj7L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__81nUwuCkj7L.jpg"
+    },
+    {
+      "item_id": "B07V9RKSGP",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME_FURNITURE_AND_DECOR__51mzkAW3qML.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME_FURNITURE_AND_DECOR__51mzkAW3qML.jpg"
+    },
+    {
+      "item_id": "B07VCD2Q77",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME_FURNITURE_AND_DECOR__51KVWp60QtL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME_FURNITURE_AND_DECOR__51KVWp60QtL.jpg"
+    },
+    {
+      "item_id": "B07W3MGMDQ",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71PzIUthBKL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71PzIUthBKL.jpg"
+    },
+    {
+      "item_id": "B07W6ZG7K8",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__810-HhVn7BL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__810-HhVn7BL.jpg"
+    },
+    {
+      "item_id": "B07X54NFB6",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71GQOF2HGxL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71GQOF2HGxL.jpg"
+    },
+    {
+      "item_id": "B07Y9WZK4F",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__6169HfhcWqL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__6169HfhcWqL.jpg"
+    },
+    {
+      "item_id": "B07Y9X8QHC",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__51t4XaUj8DL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__51t4XaUj8DL.jpg"
+    },
+    {
+      "item_id": "B07Y9X8QHP",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61U+IJbBpBL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61U+IJbBpBL.jpg"
+    },
+    {
+      "item_id": "B07Y9YM9P2",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__6187PPzW-0L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__6187PPzW-0L.jpg"
+    },
+    {
+      "item_id": "B07Z6L2YNT",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71paQRUDfpL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71paQRUDfpL.jpg"
+    },
+    {
+      "item_id": "B081FHHB4F",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61FP51B-OzL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61FP51B-OzL.jpg"
+    },
+    {
+      "item_id": "B083VBWQ88",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71t8zZuv+aL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71t8zZuv+aL.jpg"
+    },
+    {
+      "item_id": "B087JD8Z1J",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61IQsj8fvtL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61IQsj8fvtL.jpg"
+    },
+    {
+      "item_id": "B08BN6RMCF",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__41CaB3tBs+L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__41CaB3tBs+L.jpg"
+    },
+    {
+      "item_id": "B08CZ3XYY7",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71TdAsFG9YL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__71TdAsFG9YL.jpg"
+    },
+    {
+      "item_id": "B08D73TS28",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__516zZSiwyXL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__516zZSiwyXL.jpg"
+    },
+    {
+      "item_id": "B08F7QGGDT",
+      "group": "생활일반",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61fpl35e2jL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/생활일반/HOME__61fpl35e2jL.jpg"
+    },
+    {
+      "item_id": "B073QVQV4D",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/SPORTING_GOODS__81EqSTQJ6nL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/SPORTING_GOODS__81EqSTQJ6nL.jpg"
+    },
+    {
+      "item_id": "B07FDDL35B",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61OJlRvbI4L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61OJlRvbI4L.jpg"
+    },
+    {
+      "item_id": "B07G3SLKQ8",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__614SAJWSwlL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__614SAJWSwlL.jpg"
+    },
+    {
+      "item_id": "B07H8K6KS6",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__51ZN1cmkqAL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__51ZN1cmkqAL.jpg"
+    },
+    {
+      "item_id": "B07H8N3CXQ",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61v4PvVkHUL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61v4PvVkHUL.jpg"
+    },
+    {
+      "item_id": "B07LB5NX15",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61NRARi8B4L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61NRARi8B4L.jpg"
+    },
+    {
+      "item_id": "B07RRPSY2H",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/SUITCASE__81swF0yO-hL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/SUITCASE__81swF0yO-hL.jpg"
+    },
+    {
+      "item_id": "B07T4KT783",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__71Efc-0nETL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__71Efc-0nETL.jpg"
+    },
+    {
+      "item_id": "B07THM684C",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__618fHviShtL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__618fHviShtL.jpg"
+    },
+    {
+      "item_id": "B07VC2SLTH",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__71ZIHfC4YtL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__71ZIHfC4YtL.jpg"
+    },
+    {
+      "item_id": "B07VV2J73V",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__51U7voF4LDL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__51U7voF4LDL.jpg"
+    },
+    {
+      "item_id": "B07YXNGCP3",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61rf1bVSS1L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61rf1bVSS1L.jpg"
+    },
+    {
+      "item_id": "B083VBHSQ2",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__519nWNs+pzL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__519nWNs+pzL.jpg"
+    },
+    {
+      "item_id": "B083VDW55R",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61ZCMRxuCcL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61ZCMRxuCcL.jpg"
+    },
+    {
+      "item_id": "B0841YRWGS",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61tcQoK2qnL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__61tcQoK2qnL.jpg"
+    },
+    {
+      "item_id": "B0841Z569V",
+      "group": "잡화",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__71lo1JgKBHL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/잡화/PET_SUPPLIES__71lo1JgKBHL.jpg"
+    },
+    {
+      "item_id": "B07DBDRMPB",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_FIXTURE__51UKqfKqdWL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_FIXTURE__51UKqfKqdWL.jpg"
+    },
+    {
+      "item_id": "B07DBHLX1W",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__41ZnGlHY0wL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__41ZnGlHY0wL.jpg"
+    },
+    {
+      "item_id": "B07JLZN1TY",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__51EBDJwrVOL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__51EBDJwrVOL.jpg"
+    },
+    {
+      "item_id": "B07MF1TK99",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__41VUfPWoOsL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__41VUfPWoOsL.jpg"
+    },
+    {
+      "item_id": "B07SSBM13Z",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61RXJjOmAvL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61RXJjOmAvL.jpg"
+    },
+    {
+      "item_id": "B07W8QXX8L",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61Hexhd5cwL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61Hexhd5cwL.jpg"
+    },
+    {
+      "item_id": "B07ZPBSQ7Q",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61nJfDujsaL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61nJfDujsaL.jpg"
+    },
+    {
+      "item_id": "B0824FLN7H",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__419jSM-lk1L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__419jSM-lk1L.jpg"
+    },
+    {
+      "item_id": "B0825DNV6Q",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__51SwjRr8K9L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__51SwjRr8K9L.jpg"
+    },
+    {
+      "item_id": "B082H4T7P1",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61LWicGVLuL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61LWicGVLuL.jpg"
+    },
+    {
+      "item_id": "B084CC8VNF",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__71XlleUIByL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__71XlleUIByL.jpg"
+    },
+    {
+      "item_id": "B0857NWXDX",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__81MyIcME6gL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__81MyIcME6gL.jpg"
+    },
+    {
+      "item_id": "B0857NYGML",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__81IZ41wZlAL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LAMP__81IZ41wZlAL.jpg"
+    },
+    {
+      "item_id": "B08778DXF1",
+      "group": "조명",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61i3F1HtCRL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/조명/LIGHT_BULB__61i3F1HtCRL.jpg"
+    },
+    {
+      "item_id": "B07SYTRPSG",
+      "group": "주방",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__611JVbDD6xL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__611JVbDD6xL.jpg"
+    },
+    {
+      "item_id": "B07T7G24KF",
+      "group": "주방",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__41GKoY2825L.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__41GKoY2825L.jpg"
+    },
+    {
+      "item_id": "B07ZVK7J8Y",
+      "group": "주방",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__71DMhmBLKAL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__71DMhmBLKAL.jpg"
+    },
+    {
+      "item_id": "B07ZVL44HT",
+      "group": "주방",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/DRINKING_CUP__615gYn1u0IL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/DRINKING_CUP__615gYn1u0IL.jpg"
+    },
+    {
+      "item_id": "B0862LDWFC",
+      "group": "주방",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__71FGPZ4bnmL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__71FGPZ4bnmL.jpg"
+    },
+    {
+      "item_id": "B089J23LMD",
+      "group": "주방",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__915Sfl8PYuL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/주방/KITCHEN__915Sfl8PYuL.jpg"
+    },
+    {
+      "item_id": "B07MGK5ZZ7",
+      "group": "침구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__51LMIoy8xmL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__51LMIoy8xmL.jpg"
+    },
+    {
+      "item_id": "B07MNB399T",
+      "group": "침구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__41sgkNQe0HL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__41sgkNQe0HL.jpg"
+    },
+    {
+      "item_id": "B07TDSQCGH",
+      "group": "침구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__518vGABirjL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__518vGABirjL.jpg"
+    },
+    {
+      "item_id": "B07TL2FP8W",
+      "group": "침구",
+      "input_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__81aXGJfnqUL.jpg",
+      "output_path": "/home/kim_3090/dev/harness-claude/claude-project/perf-eval-gen/dataset/psnr_ssim/input/침구/HOME_BED_AND_BATH__81aXGJfnqUL.jpg"
+    }
+  ],
+  "targets": {
+    "fid": 10.0,
+    "psnr": 25.0,
+    "ssim": 0.9
+  },
+  "baseline_ref": null
+}
