@@ -21,11 +21,24 @@ from pydantic import BaseModel, Field
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_EVAL500_ROOT = PROJECT_ROOT / "dataset" / "psnr_ssim"
-DEFAULT_FID500_ROOT = PROJECT_ROOT / "dataset" / "fid"
-DEFAULT_FID_V2_ROOT = PROJECT_ROOT / "dataset" / "fid_v2"
-DEFAULT_RUNS_ROOT = PROJECT_ROOT / "dataset" / "runs"
+
+
+def _root_from_env(name: str, fallback: Path) -> Path:
+    """Data root override. Docker 는 호스트와 같은 절대경로로 bind-mount 하므로,
+    run 산출물에 기록된 절대경로(generated.csv/results.json)가 컨테이너에서도
+    그대로 해석된다 — 데이터 재작성 없이 호스트/컨테이너 파리티."""
+    value = os.environ.get(name, "").strip()
+    return Path(value) if value else fallback
+
+
+DEFAULT_EVAL500_ROOT = _root_from_env("EVAL500_ROOT", PROJECT_ROOT / "dataset" / "psnr_ssim")
+DEFAULT_FID500_ROOT = _root_from_env("FID500_ROOT", PROJECT_ROOT / "dataset" / "fid")
+DEFAULT_FID_V2_ROOT = _root_from_env("FID_V2_ROOT", PROJECT_ROOT / "dataset" / "fid_v2")
+DEFAULT_RUNS_ROOT = _root_from_env("RUNS_ROOT", PROJECT_ROOT / "dataset" / "runs")
 DEFAULT_FIXTURE_RESULT = PROJECT_ROOT / "web" / "fixtures" / "results.fixture.json"
+# pilot 경로는 env override 하지 않는다 — scripts/run_eval.py 의 상수와 같아야
+# 한다는 계약(tests/test_web_input.py). docker 는 호스트 pilot 을 /app/runs/pilot
+# 으로 mount 해서 이 기본값을 그대로 쓴다.
 DEFAULT_PILOT_PATH = PROJECT_ROOT / "runs" / "pilot" / "pilot.json"
 FID_RUN_ID = "fid500-v2"
 FID_V2_RUN_ID = "fid_v2_img2img"

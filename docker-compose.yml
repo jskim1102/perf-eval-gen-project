@@ -1,0 +1,72 @@
+# perf-eval-gen — backend(FastAPI+GPU) + frontend(정적 서버) 2컨테이너.
+#
+# 실행:  docker compose up -d --build      종료:  docker compose down
+# 접속:  http://<서버IP>:${FRONTEND_PORT}
+#
+# 환경변수는 같은 디렉토리의 `.env` (없으면 `.env.example` 복사). 포트는 add-cto offset.
+#
+# ── 경로 규약 (중요) ───────────────────────────────────────────────────────
+# dataset 의 manifest/results 에는 **절대경로**가 기록돼 있고, 백엔드의 /api/image
+# 는 그 절대경로가 설정된 루트 밑인지 검사한다. 그래서 데이터는 호스트 경로 그대로
+# 컨테이너에 mount 한다 (`${DATASET_DIR}:${DATASET_DIR}`) — 데이터 재작성 불필요,
+# 호스트 dev.sh 와 컨테이너가 완전히 같은 경로를 본다(RULES §5.5 파리티).
+# 다른 PC 로 옮겨 경로가 바뀌면 dataset 안 기록된 경로도 같이 치환해야 한다
+# (README/USAGE 의 sed 절차).
+
+services:
+  backend:
+    build:
+      context: .
+    image: perf-eval-gen-backend:dev
+    container_name: perf-eval-gen-backend
+    # 호스트 uid/gid 로 실행 — 새 run 산출물이 root 소유로 떨어지지 않게.
+    user: "${DOCKER_UID:-1000}:${DOCKER_GID:-1000}"
+    environment:
+      # 데이터 루트 = 호스트와 동일 절대경로 (web/server.py 가 env 로 읽는다).
+      RUNS_ROOT: ${RUNS_ROOT:?set RUNS_ROOT in .env}
+      EVAL500_ROOT: ${EVAL500_ROOT:?set EVAL500_ROOT in .env}
+      FID500_ROOT: ${FID500_ROOT:?set FID500_ROOT in .env}
+      FID_V2_ROOT: ${FID_V2_ROOT:?set FID_V2_ROOT in .env}
+      # 가중치 캐시. FLUX.1-dev 는 gated 라 최초 다운로드에 토큰이 필요하다.
+      HF_HOME: ${HF_HOME:?set HF_HOME in .env}
+      HF_TOKEN: ${HF_TOKEN:-}
+      # 생성·측정 CLI — 컨테이너에는 .venv 가 없다(시스템 python).
+      EVAL_CMD: python scripts/run_eval.py
+      TRY_CMD: python scripts/try_generate.py
+      FID_CMD: python scripts/run_fid_eval.py
+      FID_V2_CMD: python scripts/run_fid_v2_img2img_eval.py
+      # CORS allow-origin 은 브라우저가 붙는 **호스트** 프론트 포트 기준.
+      FRONTEND_PORT: ${FRONTEND_PORT:?set FRONTEND_PORT in .env}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "${BACKEND_PORT:?set BACKEND_PORT in .env}:8000"
+    volumes:
+      # 데이터셋 = 읽기 + run 산출물 쓰기(dataset/runs).
+      - ${DATASET_DIR:?set DATASET_DIR in .env}:${DATASET_DIR}
+      # pilot.json — 서버가 strength 정본으로 읽는다. 경로는 이미지 기준
+      # (/app/runs/pilot): web/server.py 와 scripts/run_eval.py 의 기본 상수가
+      # 같아야 한다는 계약 때문에 호스트 절대경로로 바꾸지 않는다.
+      - ${PILOT_DIR:?set PILOT_DIR in .env}:/app/runs/pilot:ro
+      # HF 가중치 캐시 — 없으면 SDXL 7GB / FLUX 32GB 재다운로드.
+      - ${HF_HOME}:${HF_HOME}
+    restart: unless-stopped
+
+  frontend:
+    image: perf-eval-gen-backend:dev
+    container_name: perf-eval-gen-frontend
+    user: "${DOCKER_UID:-1000}:${DOCKER_GID:-1000}"
+    # --backend-port 는 브라우저가 직접 호출할 **호스트** 포트다(컨테이너 8000 아님).
+    command: >
+      python web/frontend.py --host 0.0.0.0 --port 5173
+      --backend-port ${BACKEND_PORT:?set BACKEND_PORT in .env}
+    ports:
+      - "${FRONTEND_PORT:?set FRONTEND_PORT in .env}:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
