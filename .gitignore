@@ -12,7 +12,6 @@ DESIGN.md
 .sources/
 
 report/out/
-runs/
 *.log
 .gstack/
 .dev.pids

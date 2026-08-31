@@ -1,0 +1,100 @@
+{
+  "created_at": "2026-08-05T01:18:30.081299+09:00",
+  "n": 50,
+  "seed": 0,
+  "model": "stabilityai/stable-diffusion-xl-base-1.0",
+  "strengths": [
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4
+  ],
+  "targets": {
+    "fid": 10.0,
+    "psnr": 25.0,
+    "ssim": 0.9
+  },
+  "selection_rule": "maximum PSNR among strengths meeting PSNR and SSIM targets",
+  "pair_manifest": "/home/kim_3090/datasets/abo/curated/eval500/manifests/psnr_ssim_100.csv",
+  "pair_manifest_sha256": "6000f84f0a7023ce0995e9d6eec627091e4ee252960f9cf4d586dd8a5ded19cc",
+  "runs_root": "/home/kim_3090/datasets/abo/perf-eval-gen-runs",
+  "results": [
+    {
+      "run_id": "pilot-s015",
+      "strength": 0.15,
+      "fid": 16.367664604555785,
+      "psnr": 32.76344167329813,
+      "ssim": 0.9290359951120127,
+      "generation_count": 50,
+      "elapsed_seconds": 108.48399581597187,
+      "peak_vram_gib": 9.734136581420898,
+      "meets_psnr_ssim_gate": true
+    },
+    {
+      "run_id": "pilot-s020",
+      "strength": 0.2,
+      "fid": 19.329095030205167,
+      "psnr": 31.66676420446774,
+      "ssim": 0.9231736039316486,
+      "generation_count": 50,
+      "elapsed_seconds": 132.31670871190727,
+      "peak_vram_gib": 9.734823226928711,
+      "meets_psnr_ssim_gate": true
+    },
+    {
+      "run_id": "pilot-s025",
+      "strength": 0.25,
+      "fid": 21.991343830263133,
+      "psnr": 31.199199922587415,
+      "ssim": 0.9205242117493464,
+      "generation_count": 50,
+      "elapsed_seconds": 144.6795164430514,
+      "peak_vram_gib": 9.734823226928711,
+      "meets_psnr_ssim_gate": true
+    },
+    {
+      "run_id": "pilot-s030",
+      "strength": 0.3,
+      "fid": 26.098682094375476,
+      "psnr": 30.33658161259633,
+      "ssim": 0.9150374101414319,
+      "generation_count": 50,
+      "elapsed_seconds": 168.975638034055,
+      "peak_vram_gib": 9.734823226928711,
+      "meets_psnr_ssim_gate": true
+    },
+    {
+      "run_id": "pilot-s035",
+      "strength": 0.35,
+      "fid": 28.422059946923127,
+      "psnr": 29.905267710054645,
+      "ssim": 0.912264816141288,
+      "generation_count": 50,
+      "elapsed_seconds": 180.61177449999377,
+      "peak_vram_gib": 9.734823226928711,
+      "meets_psnr_ssim_gate": true
+    },
+    {
+      "run_id": "pilot-s040",
+      "strength": 0.4,
+      "fid": 33.69223276635876,
+      "psnr": 29.07630400228465,
+      "ssim": 0.9062005394194712,
+      "generation_count": 50,
+      "elapsed_seconds": 204.63042237912305,
+      "peak_vram_gib": 9.734823226928711,
+      "meets_psnr_ssim_gate": true
+    }
+  ],
+  "selected": 0.15,
+  "best": {
+    "strength": 0.15,
+    "psnr": 32.76344167329813,
+    "ssim": 0.9290359951120127,
+    "psnr_ssim_target_deficit": 0.0
+  },
+  "fid_note": "FID is excluded from the EVAL500 measurement axis and transferred to a separate dataset pending definition.",
+  "reselected_at": "2026-08-27T21:47:44.285145+09:00"
+}
